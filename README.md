@@ -35,6 +35,12 @@ Access all the important information including **current time, date, month, year
 
 ---
 
+### **Credits & Shoutouts**
+
+Credit to [OpenCage](https://opencagedata.com/) and [TypeFit](https://type.fit/api/quotes) for the reliable, secure and fast API's for the Seconds web application.
+
+---
+
 ### **Want to know more about me?**
 
 _If you wish to know more about me and the projects I've developed and designed, or simply contact me for any queries:_
