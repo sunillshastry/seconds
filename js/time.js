@@ -49,12 +49,12 @@ function setTimeToDisplay() {
 
 function userGreeting(hoursValue) {
 	let val = "";
-	if (hoursValue >= 12) {
-		val = "afternoon";
-	} else if (hoursValue >= 18) {
-		val = "evening";
-	} else if (hoursValue >= 24 && hoursValue < 12) {
+	if (hoursValue < 12) {
 		val = "morning";
+	} else if (hoursValue >= 12 && hoursValue < 18) {
+		val = "afternoon";
+	} else if (hoursValue >= 18 && hoursValue < 25) {
+		val = "evening";
 	}
 	return val;
 }
