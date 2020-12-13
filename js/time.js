@@ -36,7 +36,6 @@ function setTimeToDisplay() {
 	let customMonthValue = customValueImplementor(month);
 	timeValue.innerHTML = `${customHourValue}:${customMinutesValue} ${timeStatus}`;
 	monthValue.innerHTML = `${customDateValue} / ${customMonthValue} / ${year}`;
-	console.log(hours);
 	const greetValue = userGreeting(hours);
 	if (greetValue === "morning") {
 		timeGreeting.innerHTML = `<i class="fas fa-sun"></i>  Good ${greetValue}`;
@@ -113,6 +112,7 @@ function timeSwitcher(hourValue) {
 		case 23:
 			hour = 11;
 			break;
+		case 0:
 		case 12:
 		case 24:
 			hour = 12;
