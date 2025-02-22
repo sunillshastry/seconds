@@ -53,19 +53,19 @@ i {
       from(rgba(0, 0, 0, 0.3)),
       to(rgba(0, 0, 0, 0.4))
     ),
-    url('./../../assets/path.jpg');
+    url('./../assets/path.jpg');
   background-image: -o-linear-gradient(
       left top,
       rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 0.4)
     ),
-    url('./../../assets/path.jpg');
+    url('./../assets/path.jpg');
   background-image: linear-gradient(
       to right bottom,
       rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 0.4)
     ),
-    url('./../../assets/path.jpg');
+    url('./../assets/path.jpg');
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: cover;
