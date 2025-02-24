@@ -1,21 +1,21 @@
 // GEOLOCATION API
 
-const key = "a81a7f29b99b4ee686bb98e570ef1204";
-const greetingLocation = document.querySelector(".greeting-location");
-const cityDistrict = document.getElementById("city-district");
-const stateDistrict = document.getElementById("state-district");
-const postCode = document.getElementById("post-code");
-const stcCode = document.getElementById("stc-code");
+const key = 'a81a7f29b99b4ee686bb98e570ef1204';
+const greetingLocation = document.querySelector('.greeting-location');
+const cityDistrict = document.getElementById('city-district');
+const stateDistrict = document.getElementById('state-district');
+const postCode = document.getElementById('post-code');
+const stcCode = document.getElementById('stc-code');
 
 // prettier-ignore
 const permissionOverlayContainer = document.querySelector(".permission-overlay");
-const permissionCloseBtn = document.getElementById("permission-close");
+const permissionCloseBtn = document.getElementById('permission-close');
 
 window.navigator.geolocation.getCurrentPosition(
 	getGeolocationDetails,
 	function () {
-		permissionOverlayContainer.classList.remove("permission-hidden");
-	},
+		permissionOverlayContainer.classList.remove('permission-hidden');
+	}
 );
 
 async function getGeolocationDetails(pos) {
@@ -36,12 +36,12 @@ async function getGeolocationDetails(pos) {
 
 async function fetchUserLocation(lat, long) {
 	const res = await fetch(
-		`https://api.opencagedata.com/geocode/v1/json?q=${lat}+${long}&key=a81a7f29b99b4ee686bb98e570ef1204`,
+		`https://api.opencagedata.com/geocode/v1/json?q=${lat}+${long}&key=a81a7f29b99b4ee686bb98e570ef1204`
 	);
 	const data = await res.json();
 	return data;
 }
 
-permissionCloseBtn.addEventListener("click", function () {
-	permissionOverlayContainer.classList.add("permission-hidden");
+permissionCloseBtn.addEventListener('click', function () {
+	permissionOverlayContainer.classList.add('permission-hidden');
 });

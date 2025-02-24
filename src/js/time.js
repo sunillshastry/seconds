@@ -1,8 +1,8 @@
 // Time API
 
-const timeGreeting = document.getElementById("time-greeting");
-const timeValue = document.querySelector(".greeting-time");
-const monthValue = document.querySelector(".greeting-month");
+const timeGreeting = document.getElementById('time-greeting');
+const timeValue = document.querySelector('.greeting-time');
+const monthValue = document.querySelector('.greeting-month');
 
 function getTime() {
 	const timeObj = new Date();
@@ -16,7 +16,7 @@ function getTime() {
 		month,
 		year,
 		minutes,
-		hours
+		hours,
 	};
 }
 
@@ -25,10 +25,10 @@ function timeGenerator() {
 }
 
 function setTimeToDisplay() {
-	let timeStatus = "";
+	let timeStatus = '';
 	const currentTime = getTime();
 	const { date, month, year, minutes, hours } = currentTime;
-	hours > 12 ? (timeStatus = "PM") : (timeStatus = "AM");
+	hours > 12 ? (timeStatus = 'PM') : (timeStatus = 'AM');
 	let customHourValue = timeSwitcher(hours);
 	customHourValue = customValueImplementor(customHourValue);
 	let customMinutesValue = customValueImplementor(minutes);
@@ -37,23 +37,23 @@ function setTimeToDisplay() {
 	timeValue.innerHTML = `${customHourValue}:${customMinutesValue} ${timeStatus}`;
 	monthValue.innerHTML = `${customDateValue} / ${customMonthValue} / ${year}`;
 	const greetValue = userGreeting(hours);
-	if (greetValue === "morning") {
+	if (greetValue === 'morning') {
 		timeGreeting.innerHTML = `<i class="fas fa-sun"></i>  Good ${greetValue}`;
-	} else if (greetValue === "afternoon") {
+	} else if (greetValue === 'afternoon') {
 		timeGreeting.innerHTML = `<i class="fas fa-cloud-sun"></i>  Good ${greetValue}`;
-	} else if (greetValue === "evening") {
+	} else if (greetValue === 'evening') {
 		timeGreeting.innerHTML = `<i class="fas fa-cloud-moon"></i> Good ${greetValue}`;
 	}
 }
 
 function userGreeting(hoursValue) {
-	let val = "";
+	let val = '';
 	if (hoursValue < 12) {
-		val = "morning";
+		val = 'morning';
 	} else if (hoursValue >= 12 && hoursValue < 18) {
-		val = "afternoon";
+		val = 'afternoon';
 	} else if (hoursValue >= 18 && hoursValue < 25) {
-		val = "evening";
+		val = 'evening';
 	}
 	return val;
 }
@@ -118,7 +118,7 @@ function timeSwitcher(hourValue) {
 			hour = 12;
 			break;
 		default:
-			hour = "not-valid";
+			hour = 'not-valid';
 	}
 	return hour;
 }

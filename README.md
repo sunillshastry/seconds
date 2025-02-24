@@ -1,6 +1,6 @@
 # Seconds
 
-## By [Sunil Shastry](https://www.sunilshastry.com/ "Sunil Shastry").
+## By [Sunil Shastry](https://www.sunilshastry.com/ 'Sunil Shastry').
 
 ---
 
@@ -8,12 +8,12 @@ _**Seconds** assists you by providing all the crucial data, including current ti
 
 ---
 
-![Seconds](./assets/sxa.png "Seconds")
-![Seconds](./assets/sxb.png "Seconds")
+![Seconds](./assets/sxa.png 'Seconds')
+![Seconds](./assets/sxb.png 'Seconds')
 
 ### How to use?
 
-- Access the website by visiting [Seconds](https://seconds.netlify.app/ "Seconds").
+- Access the website by visiting [Seconds](https://seconds.netlify.app/ 'Seconds').
 
 - Please make sure you grant necessary actions for the application to fetch your location and details.
 
@@ -27,7 +27,7 @@ _**Seconds** assists you by providing all the crucial data, including current ti
 
 - The web application is also fully-responsive which means it can be accessed and used on any device irrespective of it's screen size.
 
-### Uses of [Seconds](https://seconds.netlify.app/ "Seconds") :
+### Uses of [Seconds](https://seconds.netlify.app/ 'Seconds') :
 
 Access all the important information including **current time, date, month, year, city and country living-in, your city and state district, city county, post-code, state and country code**.
 
@@ -45,8 +45,8 @@ Credit to [OpenCage](https://opencagedata.com/) and [TypeFit](https://type.fit/a
 
 _If you wish to know more about me and the projects I've developed and designed, or simply contact me for any queries:_
 
-Visit my [Portfolio Website](https://www.sunilshastry.com/ "Portfolio").
+Visit my [Portfolio Website](https://www.sunilshastry.com/ 'Portfolio').
 
-or, contact me on [Twitter](https://twitter.com/sunillshastry/ "Sunil on Twitter").
+or, contact me on [Twitter](https://twitter.com/sunillshastry/ 'Sunil on Twitter').
 
 **Thank you for visiting my GitHub repository, have a great day!**
