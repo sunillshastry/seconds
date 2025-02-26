@@ -9,6 +9,11 @@ html {
 	box-sizing: border-box;
 }
 
+*::selection {
+	background-color: $primary-orange;
+	color: $color-white;
+}
+
 body {
 	width: 100%;
 	font-family: $font;
