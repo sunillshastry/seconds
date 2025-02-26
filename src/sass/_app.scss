@@ -4,8 +4,8 @@ main.main {
 	min-height: 100vh;
 	background-color: $color-black;
 	background-image: linear-gradient(
-			to right,
-			rgba($orange-shade-light, 0.35),
+			to bottom,
+			rgba($orange-shade-dark, 0.15),
 			rgba($color-black, 0.35)
 		),
 		url('./../assets/background.jpg');
