@@ -1,6 +1,5 @@
-import './sass/styles.scss';
-import './utils/quote';
 import './utils/time';
 import './utils/geolocation';
+import './sass/styles.scss';
 
-console.log('Hello from TypeScript (script.ts)!');
+// import './controllers/quoteController';
