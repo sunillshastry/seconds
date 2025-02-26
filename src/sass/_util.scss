@@ -1,0 +1,33 @@
+@use 'variables' as *;
+
+button.geodata--btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1rem 1.5rem;
+	font-size: $default-font-size;
+	text-transform: uppercase;
+	font-family: $font;
+	position: absolute;
+	border: 2px solid transparent;
+	outline: 2px solid transparent;
+	background-color: $primary-orange;
+	color: $color-white;
+	border-radius: 4px;
+	transition: $default-transition;
+	margin-top: 2rem;
+
+	&:hover {
+		cursor: pointer;
+		background-color: $orange-shade-dark;
+	}
+
+	&:focus {
+		outline: 2px solid $primary-orange;
+		border: 2px solid currentColor;
+	}
+
+	& span:nth-of-type(2) {
+		margin-left: 5px;
+	}
+}
