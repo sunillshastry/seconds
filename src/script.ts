@@ -1,4 +1,5 @@
-// import './style.css'
+import './utils/time';
+import './utils/geolocation';
 import './sass/styles.scss';
-console.log('Hello from TypeScript!');
-console.log('Testing custom deploys...');
+
+// import './controllers/quoteController';
