@@ -25,4 +25,4 @@ dist-ssr
 
 # Custom
 oldindex.html
-src/js
+src/js/
