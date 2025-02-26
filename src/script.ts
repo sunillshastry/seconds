@@ -1,4 +1,6 @@
-// import './style.css'
 import './sass/styles.scss';
-console.log('Hello from TypeScript!');
-console.log('Testing custom deploys...');
+import './utils/quote';
+import './utils/time';
+import './utils/geolocation';
+
+console.log('Hello from TypeScript (script.ts)!');
