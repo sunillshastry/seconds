@@ -12,6 +12,7 @@
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.21.0",
+		"@types/node": "^22.13.5",
 		"eslint": "^9.21.0",
 		"typedoc": "^0.27.9",
 		"typescript": "~5.7.2",
@@ -19,6 +20,7 @@
 		"vite": "^6.1.0"
 	},
 	"dependencies": {
+		"dotenv": "^16.4.7",
 		"sass": "^1.85.0",
 		"zod": "^3.24.2"
 	}
