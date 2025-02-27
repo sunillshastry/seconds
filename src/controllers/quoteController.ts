@@ -7,14 +7,17 @@ const quoteURLEndpoint: string =
 
 function setupQuoteDisplay(url: string | undefined): void {
 	setInterval(async function () {
-		const { author, content } = await getRandomQuote(url as string);
+		const { author, content } = (await getRandomQuote(url as string)) ?? {
+			author: 'Unknown',
+			content: 'N/A',
+		};
 
 		quoteTitle.style.opacity = '0';
 		quoteAuthor.style.opacity = '0';
 
 		setTimeout(function () {
-			quoteTitle.textContent = content || 'N/A';
-			quoteAuthor.textContent = author || 'Unknown';
+			quoteTitle.textContent = content;
+			quoteAuthor.textContent = author;
 
 			quoteTitle.style.opacity = '1';
 			quoteAuthor.style.opacity = '1';
