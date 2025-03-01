@@ -1,4 +1,7 @@
-function getUserTime() {
+import GetUserTime from '../types/GetUserTime';
+import { z } from 'zod';
+
+function getUserTime(): z.infer<typeof GetUserTime> {
 	const currentDate = new Date();
 	const date = currentDate.getDate();
 	const unformattedMonth = currentDate.getMonth() + 1;
@@ -10,8 +13,6 @@ function getUserTime() {
 	const month = getFormattedMonth(unformattedMonth);
 
 	const isPostMeridian = unformattedHours >= 12 && unformattedHours < 24;
-
-	console.log(isPostMeridian);
 
 	return {
 		date,
