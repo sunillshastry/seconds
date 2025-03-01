@@ -1,4 +1,4 @@
-import GetUserTime from '../types/GetUserTime';
+import GetUserTime from '../schema/GetUserTime';
 import { z } from 'zod';
 
 function getUserTime(): z.infer<typeof GetUserTime> {
