@@ -25,4 +25,6 @@ dist-ssr
 
 # Custom
 oldindex.html
+src/js/
 .env
+src/style.css
