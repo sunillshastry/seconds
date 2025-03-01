@@ -9,12 +9,17 @@ function getUserTime() {
 	const hours = getFormattedHours(unformattedHours);
 	const month = getFormattedMonth(unformattedMonth);
 
+	const isPostMeridian = unformattedHours >= 12 && unformattedHours < 24;
+
+	console.log(isPostMeridian);
+
 	return {
 		date,
 		month,
 		year,
 		hours,
 		minutes,
+		isPostMeridian,
 	};
 }
 
