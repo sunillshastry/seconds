@@ -12,4 +12,4 @@ async function getRandomQuote(quoteUrl: string | undefined): QuoteResponse {
 	}
 }
 
-export default getRandomQuote;
+export { getRandomQuote };
