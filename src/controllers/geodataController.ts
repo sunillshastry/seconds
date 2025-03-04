@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import { fetchUserCurrentLocation } from '../utils/geolocation';
 import GeoData from '../schema/GeoData';
+import entityIconHandler from '../utils/entityIconHandler';
 
 const geoDataURLEndpoint =
 	import.meta.env.VITE_GEODATA_ENDPOINT ||
@@ -35,7 +36,10 @@ function setupUsersGeoDataUI(responseData: z.infer<typeof GeoData>) {
 		if (Object.keys(userLocationAddress).includes(objectKey)) {
 			const HTMLGeoEntityTemplate = `
 			<div class="geolocation__entity">
-				<h4>${objectKey}</h4>
+				<h4>
+					<span>${objectKey}</span>
+					<span>${entityIconHandler(objectKey)}</span>
+				</h4>
 				<h3>${userLocationAddress[objectKey as keyof typeof userLocationAddress]}</h3>
 			</div>
 		`;
