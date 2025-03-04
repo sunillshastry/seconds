@@ -4,6 +4,19 @@ button.geodata--btn {
 	margin-top: 2rem;
 	background-color: $primary-orange;
 	color: $color-white;
+
+	&:hover {
+		background-color: $orange-shade-dark;
+	}
+}
+
+button.geodata--close {
+	position: fixed;
+	right: 0;
+	top: 0;
+	margin: 2rem;
+	background-color: $primary-purple;
+	color: $color-white;
 }
 
 button {
@@ -21,7 +34,6 @@ button {
 
 	&:hover {
 		cursor: pointer;
-		background-color: $orange-shade-dark;
 	}
 
 	&:focus {
