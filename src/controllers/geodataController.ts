@@ -1,7 +1,7 @@
 import { z } from 'zod';
 import { fetchUserCurrentLocation } from '../utils/geolocation';
 import GeoData from '../schema/GeoData';
-import entityIconHandler from '../utils/entityIconHandler';
+import entityIconHandler from '../services/entityIconHandler';
 
 const geoDataURLEndpoint =
 	import.meta.env.VITE_GEODATA_ENDPOINT ||
