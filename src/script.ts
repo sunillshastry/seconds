@@ -1,4 +1,3 @@
-import './utils/time';
 import './utils/geolocation';
 import './sass/styles.scss';
 
