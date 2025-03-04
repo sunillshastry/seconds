@@ -1,5 +1,3 @@
-import GeoData from '../schema/GeoData';
-import { z } from 'zod';
 import IconObjectKey from '../types/IconObjectKey';
 
 const SVGInfoCircle = `
