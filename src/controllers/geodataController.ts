@@ -2,6 +2,9 @@ import { z } from 'zod';
 import { fetchUserCurrentLocation } from '../utils/geolocation';
 import GeoData from '../schema/GeoData';
 import entityIconHandler from '../services/entityIconHandler';
+import formatObjectKeyName from '../services/formatObjectKey';
+import handleNonFriendlyName from '../services/handleNonFriendlyName';
+import setCityOnHome from '../services/setCityOnHome';
 
 const geoDataURLEndpoint =
 	import.meta.env.VITE_GEODATA_ENDPOINT ||
@@ -34,10 +37,21 @@ function setupUsersGeoDataUI(responseData: z.infer<typeof GeoData>) {
 	const { address: userLocationAddress } = responseData;
 	for (const objectKey in userLocationAddress) {
 		if (Object.keys(userLocationAddress).includes(objectKey)) {
+			if (objectKey === 'city') {
+				setCityOnHome(
+					userLocationAddress[
+						objectKey as keyof typeof userLocationAddress
+					] as string
+				);
+			}
 			const HTMLGeoEntityTemplate = `
 			<div class="geolocation__entity">
 				<h4>
-					<span>${objectKey}</span>
+					<span>${
+						objectKey.includes('ISO')
+							? handleNonFriendlyName(objectKey)
+							: formatObjectKeyName(objectKey)
+					}</span>
 					<span>${entityIconHandler(objectKey)}</span>
 				</h4>
 				<h3>${userLocationAddress[objectKey as keyof typeof userLocationAddress]}</h3>
