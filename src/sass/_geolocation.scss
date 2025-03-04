@@ -11,6 +11,7 @@
 	bottom: 0;
 	padding: 0;
 	display: grid;
+	row-gap: 8rem;
 	grid-template-columns: repeat(2, 1fr);
 	transition: $default-transition;
 
