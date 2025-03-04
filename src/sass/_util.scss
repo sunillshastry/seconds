@@ -1,6 +1,12 @@
 @use 'variables' as *;
 
 button.geodata--btn {
+	margin-top: 2rem;
+	background-color: $primary-orange;
+	color: $color-white;
+}
+
+button {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -10,11 +16,8 @@ button.geodata--btn {
 	font-family: $font;
 	border: 2px solid transparent;
 	outline: 2px solid transparent;
-	background-color: $primary-orange;
-	color: $color-white;
 	border-radius: 4px;
 	transition: $default-transition;
-	margin-top: 2rem;
 
 	&:hover {
 		cursor: pointer;
