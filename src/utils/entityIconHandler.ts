@@ -13,7 +13,10 @@ function entityIconHandler(objectKey: IconObjectKey) {
   <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z"/>
 </svg>`;
 	} else if (objectKey === 'road') {
-		return 'road';
+		return `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sign-stop-lights-fill" viewBox="0 0 16 16">
+  <path d="M8 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2m0 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m1 2a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+  <path d="M9.05.435c-.58-.58-1.52-.58-2.1 0L.436 6.95c-.58.58-.58 1.519 0 2.098l6.516 6.516c.58.58 1.519.58 2.098 0l6.516-6.516c.58-.58.58-1.519 0-2.098zM6 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1z"/>
+</svg>`;
 	} else if (objectKey === 'neighbourhood') {
 	} else if (objectKey === 'suburb') {
 	} else if (objectKey === 'city') {
