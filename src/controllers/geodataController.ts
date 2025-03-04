@@ -21,11 +21,9 @@ window.navigator.geolocation.getCurrentPosition(
 
 async function handleGeoNavigateSuccess(position: GeolocationPosition) {
 	const { latitude, longitude } = position.coords as GeolocationCoordinates;
-	// const fetchResponseData = await fetchUserCurrentLocation(
-	// 	geoDataURLEndpoint,
-	// 	latitude,
-	// 	longitude
-	// );
+	// const fetchResponseData: z.infer<typeof GeoData> =
+	// 	await fetchUserCurrentLocation(geoDataURLEndpoint, latitude, longitude);
+
 	// setupUsersGeoDataUI(fetchResponseData);
 }
 
