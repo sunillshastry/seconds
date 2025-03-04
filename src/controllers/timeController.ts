@@ -8,10 +8,6 @@ const DOMGreetingDate = document.querySelector(
 	'#greeting--date'
 )! as HTMLHeadingElement;
 
-// const DOMGreetingLocation = document.querySelector(
-// 	'#greeting--location'
-// )! as HTMLSpanElement;
-
 function setTimeToUserUI() {
 	const currentUserTime = getUserTime();
 	const userTimeZodParse = GetUserTime.safeParse(currentUserTime);
