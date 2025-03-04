@@ -8,12 +8,14 @@
 		"build": "tsc && vite build",
 		"preview": "vite preview",
 		"lint": "eslint .",
-		"compile": "tsc"
+		"compile": "tsc",
+		"format": "prettier --write ."
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.21.0",
 		"@types/node": "^22.13.5",
 		"eslint": "^9.21.0",
+		"prettier": "3.5.3",
 		"typedoc": "^0.27.9",
 		"typescript": "~5.7.2",
 		"typescript-eslint": "^8.24.1",
