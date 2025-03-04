@@ -54,6 +54,10 @@ function entityIconHandler(objectKey: IconObjectKey) {
 	} else if (objectKey === 'country_code') {
 	} else if (objectKey === 'ISO3166-2-lvl4') {
 	} else if (objectKey === 'county') {
+		return `
+		<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-signpost-split-fill" viewBox="0 0 16 16">
+  		<path d="M7 16h2V6h5a1 1 0 0 0 .8-.4l.975-1.3a.5.5 0 0 0 0-.6L14.8 2.4A1 1 0 0 0 14 2H9v-.586a1 1 0 0 0-2 0V7H2a1 1 0 0 0-.8.4L.225 8.7a.5.5 0 0 0 0 .6l.975 1.3a1 1 0 0 0 .8.4h5z"/>
+		</svg>`;
 	} else if (objectKey === 'state_district') {
 		return `
 		<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-broadcast" viewBox="0 0 16 16">
