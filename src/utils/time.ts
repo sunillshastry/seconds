@@ -21,16 +21,16 @@ function getUserTime(): z.infer<typeof GetUserTime> {
 		hours,
 		minutes,
 		isPostMeridian,
-		greeting: getTimePeriodGreeting(hours),
+		greeting: getTimePeriodGreeting(unformattedHours),
 	};
 }
 
 function getTimePeriodGreeting(currentHour: number) {
-	if (currentHour < 12) {
+	if (currentHour >= 0 && currentHour < 12) {
 		return 'morning';
 	} else if (currentHour >= 12 && currentHour < 18) {
 		return 'afternoon';
-	} else if (currentHour >= 18 && currentHour <= 24) {
+	} else if (currentHour >= 18 && currentHour < 24) {
 		return 'evening';
 	}
 	return '';
