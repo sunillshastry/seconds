@@ -11,4 +11,6 @@ window.navigator.geolocation.getCurrentPosition(
 
 function handleGeoNavigateSuccess(position) {}
 
-function handleGeoNavigateFailure() {}
+function handleGeoNavigateFailure() {
+	console.log("Error: Unable to access user's current location coordinates");
+}
