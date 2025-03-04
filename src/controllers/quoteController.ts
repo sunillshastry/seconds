@@ -7,7 +7,14 @@ const DOMQuoteAuthor = document.querySelector(
 const quoteURLEndpoint: string =
 	import.meta.env.VITE_QUOTES_ENDPOINT || `https://api.quotable.io/random`;
 
-function setupQuoteDisplay(url: string | undefined): void {
+async function setupQuoteDisplay(url: string | undefined): Promise<void> {
+	const { author, content } = (await getRandomQuote(url as string)) ?? {
+		author: 'Unknown',
+		content: 'N/A',
+	};
+	DOMQuoteTitle.textContent = content;
+	DOMQuoteAuthor.textContent = author;
+
 	setInterval(async function () {
 		const { author, content } = (await getRandomQuote(url as string)) ?? {
 			author: 'Unknown',

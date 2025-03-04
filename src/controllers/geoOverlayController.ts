@@ -17,7 +17,10 @@ DOMGeoDataCloseBtn.addEventListener('click', closeGeoDataMenuBar);
 window.addEventListener('keyup', closeGeoDataMenuBar);
 
 function closeGeoDataMenuBar(event: KeyboardEvent | MouseEvent) {
-	if (event instanceof KeyboardEvent) {
+	if (
+		event instanceof KeyboardEvent &&
+		(event.code === 'Escape' || event.key === 'Escape')
+	) {
 		if (DOMGeolocationContainer.classList.contains('geolocation-display')) {
 			DOMGeolocationContainer.classList.remove('geolocation-display');
 		}
