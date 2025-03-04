@@ -21,7 +21,19 @@ function getUserTime(): z.infer<typeof GetUserTime> {
 		hours,
 		minutes,
 		isPostMeridian,
+		greeting: getTimePeriodGreeting(hours),
 	};
+}
+
+function getTimePeriodGreeting(currentHour: number) {
+	if (currentHour < 12) {
+		return 'morning';
+	} else if (currentHour >= 12 && currentHour < 18) {
+		return 'afternoon';
+	} else if (currentHour >= 18 && currentHour <= 24) {
+		return 'evening';
+	}
+	return '';
 }
 
 function getFormattedMonth(month: number): string {
