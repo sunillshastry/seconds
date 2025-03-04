@@ -1,4 +1,4 @@
-import getRandomQuote from '../utils/quote';
+import { getRandomQuote } from '../utils/quote';
 
 const DOMQuoteTitle = document.querySelector('#quote')! as HTMLSpanElement;
 const DOMQuoteAuthor = document.querySelector(
