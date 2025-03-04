@@ -15,23 +15,29 @@ async function setupQuoteDisplay(url: string | undefined): Promise<void> {
 	DOMQuoteTitle.textContent = content;
 	DOMQuoteAuthor.textContent = author;
 
-	setInterval(async function () {
-		const { author, content } = (await getRandomQuote(url as string)) ?? {
-			author: 'Unknown',
-			content: 'N/A',
-		};
+	setInterval(
+		async function () {
+			const { author, content } = (await getRandomQuote(url as string)) ?? {
+				author: 'Unknown',
+				content: 'N/A',
+			};
 
-		DOMQuoteTitle.style.opacity = '0';
-		DOMQuoteAuthor.style.opacity = '0';
+			DOMQuoteTitle.style.opacity = '0';
+			DOMQuoteAuthor.style.opacity = '0';
 
-		setTimeout(function () {
-			DOMQuoteTitle.textContent = content;
-			DOMQuoteAuthor.textContent = author;
+			setTimeout(
+				function () {
+					DOMQuoteTitle.textContent = content;
+					DOMQuoteAuthor.textContent = author;
 
-			DOMQuoteTitle.style.opacity = '1';
-			DOMQuoteAuthor.style.opacity = '1';
-		}, import.meta.env.VITE_QUOTE_HIDE_DELAY || 500);
-	}, import.meta.env.VITE_QUOTE_DELAY || 6000);
+					DOMQuoteTitle.style.opacity = '1';
+					DOMQuoteAuthor.style.opacity = '1';
+				},
+				import.meta.env.VITE_QUOTE_HIDE_DELAY || 500
+			);
+		},
+		import.meta.env.VITE_QUOTE_DELAY || 6000
+	);
 }
 
 setupQuoteDisplay(quoteURLEndpoint);
