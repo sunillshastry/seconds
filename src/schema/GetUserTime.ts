@@ -7,6 +7,7 @@ const GetUserTime = z.object({
 	hours: z.number(),
 	minutes: z.number(),
 	isPostMeridian: z.boolean(),
+	greeting: z.string(),
 });
 
 export default GetUserTime;
