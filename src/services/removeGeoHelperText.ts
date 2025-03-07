@@ -3,8 +3,8 @@ function removeGeoHelperText() {
 		'.geolocation h3.geo-helper'
 	)! as HTMLHeadingElement;
 
-	if (DOMGeolocationHelperText.classList.contains('hidden')) {
-		DOMGeolocationHelperText.classList.remove('hidden');
+	if (!DOMGeolocationHelperText.classList.contains('hidden')) {
+		DOMGeolocationHelperText.classList.add('hidden');
 	}
 }
 
