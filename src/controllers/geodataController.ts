@@ -5,6 +5,7 @@ import entityIconHandler from '../services/entityIconHandler';
 import formatObjectKeyName from '../services/formatObjectKey';
 import handleNonFriendlyName from '../services/handleNonFriendlyName';
 import setCityOnHome from '../services/setCityOnHome';
+import removeGeoHelperText from '../services/removeGeoHelperText';
 
 const geoDataURLEndpoint =
 	import.meta.env.VITE_GEODATA_ENDPOINT ||
@@ -33,6 +34,10 @@ function handleGeoNavigateFailure() {
 
 function setupUsersGeoDataUI(responseData: z.infer<typeof GeoData>) {
 	const { address: userLocationAddress } = responseData;
+	if (userLocationAddress) {
+		// Remove 'No geolocation data' header text from geolocation tab
+		removeGeoHelperText();
+	}
 	for (const objectKey in userLocationAddress) {
 		if (Object.keys(userLocationAddress).includes(objectKey)) {
 			if (objectKey === 'city') {
