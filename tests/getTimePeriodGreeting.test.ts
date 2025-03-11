@@ -26,3 +26,8 @@ test('src/utils/time.ts: getTimePeriodGreeting(): afternoon (2/3)', function () 
 test('src/utils/time.ts: getTimePeriodGreeting(): afternoon (3/3)', function () {
 	expect(getTimePeriodGreeting(18)).not.toBe('afternoon');
 });
+
+// Testing for 'evening' times
+test('src/utils/time.ts: getTimePeriodGreeting(): evening (1/3)', function () {
+	expect(getTimePeriodGreeting(18)).toBe('evening');
+});
