@@ -111,4 +111,4 @@ function getFormattedHours(hours: number): number {
 	}
 }
 
-export { getUserTime };
+export { getUserTime, getTimePeriodGreeting };
