@@ -34,3 +34,8 @@ test('src/utils/time.ts: getFormattedMonth(): 0', function () {
 	expect(getFormattedMonth(0)).toBe('');
 	expect(getFormattedMonth(0)).toHaveLength(0);
 });
+
+test('src/utils/time.ts: getFormattedMonth(): 13', function () {
+	expect(getFormattedMonth(13)).toBe('');
+	expect(getFormattedMonth(13)).toHaveLength(0);
+});
