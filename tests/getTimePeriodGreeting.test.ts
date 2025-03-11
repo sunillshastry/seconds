@@ -9,3 +9,7 @@ test('Testing getTimePeriodGreeting(): morning (1/3)', function () {
 test('Testing getTimePeriodGreeting(): morning (2/3)', function () {
 	expect(getTimePeriodGreeting(0)).toBe('morning');
 });
+
+test('src/utils/time.ts: getTimePeriodGreeting(): morning (3/3)', function () {
+	expect(getTimePeriodGreeting(12)).not.toBe('morning');
+});
