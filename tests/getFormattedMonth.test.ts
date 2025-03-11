@@ -28,3 +28,9 @@ GET_FORMATTED_MONTH_TEST_VALUES.forEach(function (testValue, index) {
 		);
 	});
 });
+
+// Tests for invalid month inputs
+test('src/utils/time.ts: getFormattedMonth(): 0', function () {
+	expect(getFormattedMonth(0)).toBe('');
+	expect(getFormattedMonth(0)).toHaveLength(0);
+});
