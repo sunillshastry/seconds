@@ -63,7 +63,7 @@ function getFormattedMonth(month: number): string {
 		case 12:
 			return 'Dec';
 		default:
-			return '';
+			return null;
 	}
 }
 
