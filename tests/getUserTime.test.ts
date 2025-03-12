@@ -25,3 +25,8 @@ test("src/utils/time.ts: getUserTime() [does method have 'hours' property]", fun
 test("src/utils/time.ts: getUserTime() [does method have the 'minutes' property]", function () {
 	expect(getUserTime()).toHaveProperty('minutes');
 });
+
+// Testing whether getUserTime method has the 'isPostMeridian' property
+test("src/utils/time.ts: getUserTime() [does method have the 'isPostMeridian' property]", function () {
+	expect(getUserTime()).toHaveProperty('isPostMeridian');
+});
