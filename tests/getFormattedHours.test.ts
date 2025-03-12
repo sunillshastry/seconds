@@ -18,3 +18,11 @@ FORMATTED_HOURS_TEST_VALUES.forEach(function (currentHour, index) {
 		assert.isNotNull(getFormattedHours(currentHour));
 	});
 });
+
+// Manual error testing
+test('src/utils/time.ts: getFormattedHours(): Testing for case: -1', function () {
+	expect(getFormattedHours(-1)).toBe(-1);
+	expectTypeOf(getFormattedHours(-1)).toBeNumber();
+	assert.isDefined(getFormattedHours(-1));
+	assert.isNotNull(getFormattedHours(-1));
+});
