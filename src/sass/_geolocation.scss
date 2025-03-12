@@ -22,7 +22,7 @@
 		text-transform: uppercase;
 	}
 
-	& h3::after {
+	& h3.geo-helper::after {
 		content: '';
 		display: inline-block;
 		width: 100%;
