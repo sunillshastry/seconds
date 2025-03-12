@@ -67,3 +67,11 @@ test("src/utils/time.ts: getUserTime(): Checking the 'hours' type and value for 
 	assert.isDefined(hours, 'getUserTime.hours is undefined');
 	assert.isNotNull(hours, 'getUserTime.hours is null');
 });
+
+// Checking for null or undefined 'minutes' values & checking for its type
+test("src/utils/time.ts: getUserTime(): Checking the 'minutes' type and value for null or undefined", function () {
+	const { minutes } = getUserTime();
+	expectTypeOf(minutes).toBeNumber();
+	assert.isDefined(minutes, 'getUserTime.minutes is undefined');
+	assert.isNotNull(minutes, 'getUserTime.minutes is null');
+});
