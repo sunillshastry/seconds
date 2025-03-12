@@ -20,3 +20,8 @@ test("src/utils/time.ts: getUserTime() [does method have 'year' property]", func
 test("src/utils/time.ts: getUserTime() [does method have 'hours' property]", function () {
 	expect(getUserTime()).toHaveProperty('hours');
 });
+
+// Testing whether getUserTime method has the 'minutes' property
+test("src/utils/time.ts: getUserTime() [does method have the 'minutes' property]", function () {
+	expect(getUserTime()).toHaveProperty('minutes');
+});
