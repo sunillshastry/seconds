@@ -43,3 +43,11 @@ test("src/utils/time.ts: getUserTime(): Checking the 'date' type and value for n
 	assert.isDefined(date);
 	assert.isNotNull(date);
 });
+
+// Checking for null or undefined 'month' values & checking for its type
+test("src/utils/time.ts: getUserTime(): Checking the 'month' type and value for null or undefined", function () {
+	const { month } = getUserTime();
+	expectTypeOf(month).toBeString();
+	assert.isDefined(month, 'getUserTime.month is undefined');
+	assert.isNotNull(month, 'getUserTime.month is null');
+});
