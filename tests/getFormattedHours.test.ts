@@ -26,3 +26,10 @@ test('src/utils/time.ts: getFormattedHours(): Testing for case: -1', function ()
 	assert.isDefined(getFormattedHours(-1));
 	assert.isNotNull(getFormattedHours(-1));
 });
+
+test('src/utils/time.ts: getFormattedHours(): Testing for case: 25', function () {
+	expect(getFormattedHours(25)).toBe(-1);
+	expectTypeOf(getFormattedHours(25)).toBeNumber();
+	assert.isDefined(getFormattedHours(25));
+	assert.isNotNull(getFormattedHours(25));
+});
