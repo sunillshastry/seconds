@@ -40,8 +40,8 @@ test("src/utils/time.ts: getUserTime() [does method have the 'greeting()' proper
 test("src/utils/time.ts: getUserTime(): Checking the 'date' type and value for null or undefined", function () {
 	const { date } = getUserTime();
 	expectTypeOf(date).toBeNumber();
-	assert.isDefined(date);
-	assert.isNotNull(date);
+	assert.isDefined(date, 'getUserTime.date is undefined');
+	assert.isNotNull(date, 'getUserTime.date is null');
 });
 
 // Checking for null or undefined 'month' values & checking for its type
