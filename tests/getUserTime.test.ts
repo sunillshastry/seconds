@@ -2,7 +2,7 @@ import { getUserTime } from '../src/utils/time';
 import { expect, test } from 'vitest';
 
 // Testing whether getUserTime method has the 'date' property
-test('src/utils/time.ts: getUserTime()', function () {
+test("src/utils/time.ts: getUserTime() [does method have 'date' property]", function () {
 	expect(getUserTime()).toHaveProperty('date');
 });
 
