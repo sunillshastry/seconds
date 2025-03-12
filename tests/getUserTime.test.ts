@@ -80,6 +80,6 @@ test("src/utils/time.ts: getUserTime(): Checking the 'minutes' type and value fo
 test("src/utils/time.ts: getUserTime(): Checking the 'isPostMeridian' type and value for null or undefined", function () {
 	const { isPostMeridian } = getUserTime();
 	expectTypeOf(isPostMeridian).toBeBoolean();
-	assert.isDefined(isPostMeridian, 'getUserTime.minutes is undefined');
-	assert.isNotNull(isPostMeridian, 'getUserTime.minutes is null');
+	assert.isDefined(isPostMeridian, 'getUserTime.isPostMeridian is undefined');
+	assert.isNotNull(isPostMeridian, 'getUserTime.isPostMeridian is null');
 });
