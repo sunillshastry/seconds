@@ -17,3 +17,15 @@ main.main {
 	padding: 6rem;
 	position: relative;
 }
+
+@media only screen and (max-width: $responsive-breakpoint-1) {
+	main.main {
+		padding: 4rem;
+	}
+}
+
+@media only screen and (max-width: $responsive-breakpoint-2) {
+	main.main {
+		padding: 3rem;
+	}
+}

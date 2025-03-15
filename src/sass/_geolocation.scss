@@ -60,3 +60,9 @@
 	padding: 4.5rem 5rem;
 	overflow-y: scroll;
 }
+
+@media only screen and (max-width: $responsive-breakpoint-1) {
+	.geolocation {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}

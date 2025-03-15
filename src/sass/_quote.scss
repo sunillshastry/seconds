@@ -18,3 +18,11 @@
 		transition: $default-transition;
 	}
 }
+
+@media only screen and (max-width: $responsive-breakpoint-2) {
+	.quote {
+		&__container {
+			width: 95%;
+		}
+	}
+}

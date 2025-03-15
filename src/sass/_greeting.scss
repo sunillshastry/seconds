@@ -27,3 +27,21 @@
 		margin-left: 1.5rem;
 	}
 }
+
+@media only screen and (max-width: $responsive-breakpoint-2) {
+	.greeting {
+		display: flex;
+		flex-direction: column;
+
+		&--primary {
+			font-size: 3rem;
+		}
+		& h3 {
+			margin: 1.5rem 0;
+		}
+
+		& h3:first-of-type {
+			font-size: 10rem;
+		}
+	}
+}
