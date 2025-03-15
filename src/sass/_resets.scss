@@ -18,3 +18,9 @@ body {
 	width: 100%;
 	font-family: $font;
 }
+
+@media only screen and (max-width: $responsive-breakpoint-1) {
+	html {
+		font-size: 60%;
+	}
+}
