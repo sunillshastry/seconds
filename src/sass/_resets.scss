@@ -24,3 +24,9 @@ body {
 		font-size: 60%;
 	}
 }
+
+@media only screen and (max-width: $responsive-breakpoint-2) {
+	html {
+		font-size: 58%;
+	}
+}
