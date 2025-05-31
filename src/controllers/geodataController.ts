@@ -7,9 +7,16 @@ import handleNonFriendlyName from '../services/handleNonFriendlyName';
 import setCityOnHome from '../services/setCityOnHome';
 import removeGeoHelperText from '../services/removeGeoHelperText';
 
-const geoDataURLEndpoint =
-	import.meta.env.VITE_GEODATA_ENDPOINT ||
-	'https://nominatim.openstreetmap.org/reverse';
+const geoDataURLEndpoint = import.meta.env.VITE_GEODATA_ENDPOINT;
+if (!geoDataURLEndpoint) {
+	if (import.meta.env.VITE_NODE_ENV === 'development') {
+		console.log('env.GEODATA_ENDPOINT is currently undefined');
+	} else {
+		alert(
+			'Failed to fetch geo data due to an internal error in the third-party API'
+		);
+	}
+}
 
 const DOMGeolocationContainer = document.querySelector(
 	'.geolocation'
