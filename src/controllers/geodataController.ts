@@ -22,12 +22,20 @@ const DOMGeolocationContainer = document.querySelector(
 	'.geolocation'
 )! as HTMLElement;
 
+const DOMGeolocationCity = document.getElementById(
+	'greeting--location'
+)! as HTMLSpanElement;
+const DOMGeoDataBtn = document.querySelector(
+	'.geodata--btn'
+)! as HTMLButtonElement;
+
 window.navigator.geolocation.getCurrentPosition(
 	handleGeoNavigateSuccess,
 	handleGeoNavigateFailure
 );
 
 async function handleGeoNavigateSuccess(position: GeolocationPosition) {
+	DOMGeoDataBtn.disabled = false;
 	const { latitude, longitude } = position.coords as GeolocationCoordinates;
 	const fetchResponseData: z.infer<typeof GeoData> =
 		await fetchUserCurrentLocation(geoDataURLEndpoint, latitude, longitude);
@@ -40,7 +48,16 @@ async function handleGeoNavigateSuccess(position: GeolocationPosition) {
 }
 
 function handleGeoNavigateFailure() {
-	console.log("Error: Unable to access user's current location coordinates");
+	if (import.meta.env.VITE_NODE_ENV === 'development') {
+		console.log("Error: Unable to access user's current location coordinates");
+	} else {
+		alert(
+			'Failed to fetch user location due to internal error with the third-party API'
+		);
+	}
+
+	DOMGeolocationCity.innerHTML = 'Location Unavailable';
+	DOMGeoDataBtn.disabled = true;
 }
 
 function setupUsersGeoDataUI(responseData: z.infer<typeof GeoData>) {
