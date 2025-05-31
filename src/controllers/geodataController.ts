@@ -32,7 +32,11 @@ async function handleGeoNavigateSuccess(position: GeolocationPosition) {
 	const fetchResponseData: z.infer<typeof GeoData> =
 		await fetchUserCurrentLocation(geoDataURLEndpoint, latitude, longitude);
 
-	setupUsersGeoDataUI(fetchResponseData);
+	if (!fetchResponseData?.address || !fetchResponseData?.display_name) {
+		handleGeoNavigateFailure();
+	} else {
+		setupUsersGeoDataUI(fetchResponseData);
+	}
 }
 
 function handleGeoNavigateFailure() {
