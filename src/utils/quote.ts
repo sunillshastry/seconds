@@ -7,7 +7,7 @@ async function getRandomQuote(quoteUrl: string | undefined): QuoteResponse {
 		try {
 			const responsePromise = await axios.get(quoteUrl as string, {
 				headers: {
-					'X-Api-Ke': import.meta.env.VITE_QUOTE_API_KEY,
+					'X-Api-Key': import.meta.env.VITE_QUOTE_API_KEY,
 				},
 			});
 			const { author, quote: content } = responsePromise.data[0];
