@@ -5,6 +5,12 @@ button.geodata--btn {
 	background-color: $primary-orange;
 	color: $color-white;
 
+	:disabled,
+	&[disabled] {
+		opacity: 0.75;
+		pointer-events: none;
+	}
+
 	&:hover {
 		background-color: $orange-shade-dark;
 	}
