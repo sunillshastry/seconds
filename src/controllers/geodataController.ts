@@ -7,13 +7,27 @@ import handleNonFriendlyName from '../services/handleNonFriendlyName';
 import setCityOnHome from '../services/setCityOnHome';
 import removeGeoHelperText from '../services/removeGeoHelperText';
 
-const geoDataURLEndpoint =
-	import.meta.env.VITE_GEODATA_ENDPOINT ||
-	'https://nominatim.openstreetmap.org/reverse';
+const geoDataURLEndpoint = import.meta.env.VITE_GEODATA_ENDPOINT;
+if (!geoDataURLEndpoint) {
+	if (import.meta.env.VITE_NODE_ENV === 'development') {
+		console.log('env.GEODATA_ENDPOINT is currently undefined');
+	} else {
+		alert(
+			'Failed to fetch geo data due to an internal error in the third-party API'
+		);
+	}
+}
 
 const DOMGeolocationContainer = document.querySelector(
 	'.geolocation'
 )! as HTMLElement;
+
+const DOMGeolocationCity = document.getElementById(
+	'greeting--location'
+)! as HTMLSpanElement;
+const DOMGeoDataBtn = document.querySelector(
+	'.geodata--btn'
+)! as HTMLButtonElement;
 
 window.navigator.geolocation.getCurrentPosition(
 	handleGeoNavigateSuccess,
@@ -21,15 +35,29 @@ window.navigator.geolocation.getCurrentPosition(
 );
 
 async function handleGeoNavigateSuccess(position: GeolocationPosition) {
+	DOMGeoDataBtn.disabled = false;
 	const { latitude, longitude } = position.coords as GeolocationCoordinates;
 	const fetchResponseData: z.infer<typeof GeoData> =
 		await fetchUserCurrentLocation(geoDataURLEndpoint, latitude, longitude);
 
-	setupUsersGeoDataUI(fetchResponseData);
+	if (!fetchResponseData?.address || !fetchResponseData?.display_name) {
+		handleGeoNavigateFailure();
+	} else {
+		setupUsersGeoDataUI(fetchResponseData);
+	}
 }
 
 function handleGeoNavigateFailure() {
-	console.log("Error: Unable to access user's current location coordinates");
+	if (import.meta.env.VITE_NODE_ENV === 'development') {
+		console.log("Error: Unable to access user's current location coordinates");
+	} else {
+		alert(
+			'Failed to fetch user location due to internal error with the third-party API'
+		);
+	}
+
+	DOMGeolocationCity.innerHTML = 'Location Unavailable';
+	DOMGeoDataBtn.disabled = true;
 }
 
 function setupUsersGeoDataUI(responseData: z.infer<typeof GeoData>) {
